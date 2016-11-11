@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grab-rules>
+    <!--新浪微博-->
+    <!--<grab jsEnable="false" grabSubPage="true">
+        <grabSite>http://s.weibo.com/list/relpage?search=%E6%96%B0%E7%96%86</grabSite>
+        <urlRule>#pl_weibo_direct a.W_texta.W_fb</urlRule>
+        <titleRule>.title</titleRule>
+        <sourceRule>.authorinfo a.S_txt1</sourceRule>
+        <publishRule>.authorinfo span.time</publishRule>
+    </grab>-->
+    <!--网易163-->
+    <grab jsEnable="false" grabSubPage="true">
+        <grabSite>http://xj.news.163.com/special/07091B29/dizhouyaowen.html</grabSite>
+        <urlRule>ul.l-photo-text > li .img-tit a</urlRule>
+        <titleRule>#h1title</titleRule>
+        <sourceRule>#ne_article_source</sourceRule>
+        <publishRule>.ep-time-soure.cDGray</publishRule>
+    </grab>
+    <!--新浪搜索-->
+    <grab jsEnable="false" grabSubPage="false" maxPageNumber="50">
+        <grabSite><![CDATA[http://search.sina.com.cn/?q=%D0%C2%BD%AE&range=title&c=news&sort=time&page={page}]]></grabSite>
+        <listRule>.box-result.clearfix</listRule>
+        <urlRule  mode="href">h2 > a</urlRule>
+        <titleRule>h2 > a</titleRule>
+        <sourceRule substring="^([\S\u4e00-\u9fa5]+) \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$" mode="text">h2 > .fgray_time</sourceRule>
+        <publishRule substring="(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})">h2 > .fgray_time</publishRule>
+    </grab>
+    <!--搜狐新闻-->
+    <grab jsEnable="false" grabSubPage="false" maxPageNumber="50">
+        <grabSite><![CDATA[http://news.sogou.com/news?query=site:sohu.com%20%D0%C2%BD%AE&manual=true&mode=2&sort=0&p=42230302&page={page}]]></grabSite>
+        <listRule>.vrwrap</listRule>
+        <urlRule  mode="href">.vrTitle > a</urlRule>
+        <titleRule>.vrTitle > a</titleRule>
+        <sourceRule substring="^([\S\u4e00-\u9fa5]+) \d{4}-\d{2}-\d{2} \d{2}:\d{2}$" mode="text">.news-info > .news-from</sourceRule>
+        <publishRule substring="(\d{4}-\d{2}-\d{2} \d{2}:\d{2})">.news-info > .news-from</publishRule>
+    </grab>
+    <!--腾讯新闻-->
+    <grab jsEnable="false" grabSubPage="false" maxPageNumber="50">
+        <grabSite><![CDATA[http://news.sogou.com/news?query=site:qq.com%20%D0%C2%BD%AE&manual=true&mode=2&sort=0&p=42230302&page={page}]]></grabSite>
+        <listRule>.vrwrap</listRule>
+        <urlRule  mode="href">.vrTitle > a</urlRule>
+        <titleRule>.vrTitle > a</titleRule>
+        <sourceRule substring="^([\S\u4e00-\u9fa5]+) \d{4}-\d{2}-\d{2} \d{2}:\d{2}$" mode="text">.news-info > .news-from</sourceRule>
+        <publishRule substring="(\d{4}-\d{2}-\d{2} \d{2}:\d{2})">.news-info > .news-from</publishRule>
+    </grab>
+    <!--新浪新闻-->
+    <grab jsEnable="false" grabSubPage="false" maxPageNumber="50">
+        <grabSite><![CDATA[http://news.sogou.com/news?query=site:sina.com.cn%20%D0%C2%BD%AE&manual=true&mode=2&sort=0&p=42230302&page={page}]]></grabSite>
+        <listRule>.vrwrap</listRule>
+        <urlRule  mode="href">.vrTitle > a</urlRule>
+        <titleRule>.vrTitle > a</titleRule>
+        <sourceRule substring="^([\S\u4e00-\u9fa5]+) \d{4}-\d{2}-\d{2} \d{2}:\d{2}$" mode="text">.news-info > .news-from</sourceRule>
+        <publishRule substring="(\d{4}-\d{2}-\d{2} \d{2}:\d{2})">.news-info > .news-from</publishRule>
+    </grab>
+    <!--网易新闻-->
+    <grab jsEnable="false" grabSubPage="false" maxPageNumber="50">
+        <grabSite><![CDATA[http://news.sogou.com/news?query=site:163.com%20%D0%C2%BD%AE&manual=true&mode=2&sort=0&p=42230302&page={page}]]></grabSite>
+        <listRule>.vrwrap</listRule>
+        <urlRule  mode="href">.vrTitle > a</urlRule>
+        <titleRule>.vrTitle > a</titleRule>
+        <sourceRule substring="^([\S\u4e00-\u9fa5]+) \d{4}-\d{2}-\d{2} \d{2}:\d{2}$" mode="text">.news-info > .news-from</sourceRule>
+        <publishRule substring="(\d{4}-\d{2}-\d{2} \d{2}:\d{2})">.news-info > .news-from</publishRule>
+    </grab>
+    <!--凤凰新闻-->
+    <grab jsEnable="false" grabSubPage="false" maxPageNumber="50">
+        <grabSite><![CDATA[http://news.sogou.com/news?query=site:ifeng.com%20%D0%C2%BD%AE&manual=true&mode=2&sort=0&p=42230302&page={page}]]></grabSite>
+        <listRule>.vrwrap</listRule>
+        <urlRule  mode="href">.vrTitle > a</urlRule>
+        <titleRule>.vrTitle > a</titleRule>
+        <sourceRule substring="^([\S\u4e00-\u9fa5]+) \d{4}-\d{2}-\d{2} \d{2}:\d{2}$" mode="text">.news-info > .news-from</sourceRule>
+        <publishRule substring="(\d{4}-\d{2}-\d{2} \d{2}:\d{2})">.news-info > .news-from</publishRule>
+    </grab>
+</grab-rules>

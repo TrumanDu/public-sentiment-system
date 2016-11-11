@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Class-Path: commons-lang3-3.4.jar neko-htmlunit-2.23.jar jcl-over-slf4
+ j-1.7.21.jar spring-context-4.3.3.RELEASE.jar spring-aop-4.3.3.RELEAS
+ E.jar spring-core-4.3.3.RELEASE.jar xalan-2.7.2.jar spring-boot-start
+ er-logging-1.4.1.RELEASE.jar websocket-api-9.3.11.v20160721.jar commo
+ ns-io-2.5.jar htmlunit-core-js-2.23.jar httpcore-4.4.5.jar websocket-
+ client-9.3.11.v20160721.jar httpclient-4.5.2.jar spring-expression-4.
+ 3.3.RELEASE.jar cssparser-0.9.20.jar jul-to-slf4j-1.7.21.jar xercesIm
+ pl-2.11.0.jar spring-boot-starter-1.4.1.RELEASE.jar commons-logging-1
+ .2.jar spring-beans-4.3.3.RELEASE.jar commons-codec-1.10.jar jetty-io
+ -9.3.11.v20160721.jar serializer-2.7.2.jar xml-apis-1.4.01.jar spring
+ -boot-1.4.1.RELEASE.jar slf4j-api-1.7.21.jar logback-classic-1.1.7.ja
+ r logback-core-1.1.7.jar spring-oxm-4.3.3.RELEASE.jar log4j-over-slf4
+ j-1.7.21.jar snakeyaml-1.17.jar websocket-common-9.3.11.v20160721.jar
+  htmlunit-2.23.jar jsoup-1.10.1.jar spring-boot-autoconfigure-1.4.1.R
+ ELEASE.jar jetty-util-9.3.11.v20160721.jar sac-1.3.jar httpmime-4.5.2
+ .jar
+Main-Class: com.aibibang.PublicSentimentSpiderApplication
+
