@@ -1,2 +1,2 @@
 CHCP 65001
-java -jar ./target/public-sentiment-spider-1.0-SNAPSHOT.jar
+java -Dfile.encoding=UTF-8 -jar ./target/public-sentiment-spider-1.0-SNAPSHOT.jar

@@ -92,7 +92,11 @@ public class GrabService {
     }
 
     public void saveDataToHbase(BasicData data) {
-        basicDataDao.saveToHbase(data);
+        if (data != null) {
+            basicDataDao.saveToHbase(data);
+        } else {
+            log.info("The data is empty and will not be saved");
+        }
     }
 
     public void parseAndSave(Document doc, GrabRule rule) {
@@ -103,9 +107,7 @@ public class GrabService {
         log.info("List page have been parsed, the size is: " + es.size());
         for (Element e : es) {
             BasicData data = getBasicDataFromElement(rule, e);
-            if (data != null) {
-                saveDataToHbase(data);
-            }
+            saveDataToHbase(data);
         }
     }
 
