@@ -2,7 +2,6 @@ package com.aibibang.tasks;
 
 import com.aibibang.bean.GrabRule;
 import com.aibibang.bean.GrabRuleConfig;
-import com.aibibang.service.GrabService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +29,10 @@ public class ScheduledTasks {
     @Autowired
     private Unmarshaller unmarshaller;
     @Autowired
-    private GrabService grabService;
-    @Autowired
     private GrabListTask grabListTask;
 
 
-    @Scheduled(fixedRate = 1 * 60 * 60 * 1000)
+    @Scheduled(fixedRate = 1 * 60 * 60 * 1000)  //配置抓取时间间隔
     public void scheduleTasks() {
         log.info(String.format("The Scheduled Task is beginning, the time is now %s", dateFormat.format(new Date())));
         List<GrabRule> rules = getGrabRules();
