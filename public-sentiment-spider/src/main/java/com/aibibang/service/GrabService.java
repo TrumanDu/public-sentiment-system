@@ -6,7 +6,6 @@ import com.aibibang.bean.Rule;
 import com.aibibang.dao.BasicDataDao;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -22,8 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.sun.corba.se.spi.activation.IIOP_CLEAR_TEXT.value;
 
 /**
  * Created by yanand on 2016/11/7.
@@ -95,7 +92,11 @@ public class GrabService {
     }
 
     public void saveDataToHbase(BasicData data) {
-        basicDataDao.saveToHbase(data);
+        if (data != null) {
+            basicDataDao.saveToHbase(data);
+        } else {
+            log.info("The data is empty and will not be saved");
+        }
     }
 
     public void parseAndSave(Document doc, GrabRule rule) {
@@ -106,9 +107,7 @@ public class GrabService {
         log.info("List page have been parsed, the size is: " + es.size());
         for (Element e : es) {
             BasicData data = getBasicDataFromElement(rule, e);
-            if (data != null) {
-                saveDataToHbase(data);
-            }
+            saveDataToHbase(data);
         }
     }
 

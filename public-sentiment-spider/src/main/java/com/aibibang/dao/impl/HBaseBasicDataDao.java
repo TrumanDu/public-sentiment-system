@@ -19,7 +19,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class HBaseBasicDataDao implements BasicDataDao {
-    private static final Logger log = LoggerFactory.getLogger(HBaseBasicDataDao.class);
 
     @Override
     public void saveToHbase(BasicData basicData)  {
@@ -48,6 +47,7 @@ public class HBaseBasicDataDao implements BasicDataDao {
     	}
     	 log.info(basicData == null ? null : basicData.toString());
     }
+  
     public static void main(String[] args) {
     	HBaseBasicDataDao h =new HBaseBasicDataDao();
     	BasicData b=new BasicData();
