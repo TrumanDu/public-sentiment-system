@@ -5,6 +5,7 @@ import java.lang.reflect.Field;
 import com.aibibang.bean.BasicData;
 import com.aibibang.common.Constant;
 import com.aibibang.dao.BasicDataDao;
+import com.aibibang.service.GrabService;
 import com.aibibang.util.HbaseUtil;
 import com.gargoylesoftware.htmlunit.javascript.host.file.File;
 
@@ -19,7 +20,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class HBaseBasicDataDao implements BasicDataDao {
-
+	private static final Logger log = LoggerFactory.getLogger(HBaseBasicDataDao.class);
     @Override
     public void saveToHbase(BasicData basicData)  {
     	Field[] fields = basicData.getClass().getDeclaredFields();
